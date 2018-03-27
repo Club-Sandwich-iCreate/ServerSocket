@@ -9,7 +9,6 @@ app.get('/', function(req, res) {
 });
 
 io.on('connection', function(socket) {
-  console.log(socket);
   socket.on('update', () => {
     console.log('emiting');
     io.emit('update');
@@ -55,13 +54,12 @@ io.on('connection', function(socket) {
   //socket.emit('stopSong', '');
   //socket.emit('end', '');
 });
-
+/*
 server.listen(process.env.PORT || 5000, function() {
   console.log('listening on *:3000');
 });
+*/
 
-/*
 server.listen(5000, function() {
   console.log('listening on *:5000');
 });
-*/
