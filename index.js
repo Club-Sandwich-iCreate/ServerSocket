@@ -56,8 +56,9 @@ io.on('connection', function(socket) {
 
 });
 function consoleLog(txt) {
-  var p = window.document.getElementById('para');
-  p.innerHTML = txt;
+  console.log(txt);
+  //var p = window.document.getElementById('para');
+  //p.innerHTML = txt;
 }
 
 server.listen(process.env.PORT || 5000, function() {
