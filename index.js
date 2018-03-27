@@ -9,42 +9,41 @@ app.get('/', function(req, res) {
 });
 
 io.on('connection', function(socket) {
-  console.log(socket);
   socket.on('update', () => {
     console.log('emiting');
     io.emit('update');
   });
 
   socket.on('startApplication', function(socket, msg) {
-    console.log("ON - startApplication " + msg);
+    consoleLog("ON - startApplication " + msg);
   });
 
   socket.on('checkID', function(socket, msg) {
-    console.log("ON - checkID " + msg);
+    consoleLog("ON - checkID " + msg);
   });
 
   socket.on('startAmination', function(socket, msg) {
-    console.log("ON - startAmination " + msg);
+    consoleLog("ON - startAmination " + msg);
   });
 
   socket.on('soundEvent', function(socket, msg) {
-    console.log("ON + soundEvent " + msg);
+    consoleLog("ON + soundEvent " + msg);
   });
 
   socket.on('playSong', function(socket, msg) { //quand le master ordonne de démarrer les sons
-    console.log("ON + playSong " + msg);
+    consoleLog("ON + playSong " + msg);
   });
 
   socket.on('soundMatch', function(socket, msg) {
-    console.log("ON + soundMatch " + msg);
+    consoleLog("ON + soundMatch " + msg);
   });
 
   socket.on('stopSong', function(socket, msg) {
-    console.log("ON + stopSong " + msg);
+    consoleLog("ON + stopSong " + msg);
   });
 
   socket.on('end', function(socket, msg) {
-    console.log("ON + end " + msg);
+    consoleLog("ON + end " + msg);
   });
   //socket.emit('startApplication', '');
   //socket.emit('checkID', '');
@@ -54,14 +53,18 @@ io.on('connection', function(socket) {
   //socket.emit('soundMatch', '');
   //socket.emit('stopSong', '');
   //socket.emit('end', '');
-});
 
+});
+function consoleLog(txt) {
+  var p = document.getElementById('para');
+  p.innerHTML = txt;
+}
+/*
 server.listen(process.env.PORT || 5000, function() {
   console.log('listening on *:3000');
 });
+*/
 
-/*
 server.listen(5000, function() {
   console.log('listening on *:5000');
 });
-*/
