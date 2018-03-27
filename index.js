@@ -56,7 +56,7 @@ io.on('connection', function(socket) {
 
 });
 function consoleLog(txt) {
-  var p = document.getElementById('para');
+  var p = window.document.getElementById('para');
   p.innerHTML = txt;
 }
 
