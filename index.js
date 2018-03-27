@@ -10,7 +10,7 @@ app.get('/', function(req, res) {
 
 io.on('connection', function(socket) {
   socket.on('update', () => {
-    console.log('emiting');
+    consoleLog('emiting');
     io.emit('update');
   });
 
