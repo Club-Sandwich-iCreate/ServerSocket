@@ -59,12 +59,13 @@ function consoleLog(txt) {
   var p = document.getElementById('para');
   p.innerHTML = txt;
 }
-/*
+
 server.listen(process.env.PORT || 5000, function() {
   console.log('listening on *:3000');
 });
-*/
+/*
 
 server.listen(5000, function() {
   console.log('listening on *:5000');
 });
+*/
